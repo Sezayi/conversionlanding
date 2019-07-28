@@ -16,13 +16,13 @@
   padding: 25px 40px;
   overflow: auto;
   flex: 3;
-  width: 50%;
   order: 2;
+  display: flex;
+  justify-content: center;
 }
 
 .App__Aside {
   flex: 4;
-  width: 50%;
   background-image: linear-gradient(to right, #291e50, #4a3a83);
   order: 1;
 }
@@ -161,4 +161,8 @@
 .ImageStyle {
   width: 50%;
   overflow: hidden;
+}
+
+.ThankYouWrapper {
+  align-self: center;
 }

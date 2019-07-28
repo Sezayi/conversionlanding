@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
+import firebase from 'firebase'
+import firebaseConfig from '../fire';
 
 class SignUpForm extends Component {
     constructor() {
         super();
+
+        firebase.initializeApp(firebaseConfig);
 
         this.state = {
             email: '',
@@ -16,6 +20,7 @@ class SignUpForm extends Component {
         this.inputNameRef = React.createRef()
     }
 
+
     handleChange(e) {
         let target = e.target;
         let value = target.type === 'checkbox' ? target.checked : target.value;
@@ -28,14 +33,25 @@ class SignUpForm extends Component {
 
     handleSubmit(e) {
         e.preventDefault();
-
-        console.log('The form was submitted with the following data:');
-        console.log(this.state);
+        const usersRef = firebase.database().ref('users');
+        const user = {
+          email: this.state.email,
+          name: this.state.name,
+        }
+        usersRef.push(user, ()=> {
+          this.props.history.push('/thankyou');
+        });
+        this.setState({
+          email: '',
+          name: ''
+        });
     }
 
-    componentDidMount(){
+
+    componentDidMount() {
       this.inputNameRef.current.focus()
     }
+
 
     render() {
         return (
