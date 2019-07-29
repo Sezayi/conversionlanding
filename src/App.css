@@ -6,8 +6,6 @@
 
 .App {
   height: 100vh;
-  display: flex;
-  flex-direction: row;
   color: #291e50;
 }
 
@@ -15,16 +13,11 @@
   background-color: #ffffff;
   padding: 25px 40px;
   overflow: auto;
-  flex: 3;
-  order: 2;
-  display: flex;
-  justify-content: center;
 }
 
 .App__Aside {
   flex: 4;
   background-image: linear-gradient(to right, #291e50, #4a3a83);
-  order: 1;
 }
 
 
@@ -153,8 +146,6 @@
 }
 
 .ImageWrapper {
-  display: flex;
-  justify-content: center;
   padding-top: 4rem;
 }
 
