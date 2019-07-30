@@ -6,7 +6,8 @@
 
 .App {
   height: 100vh;
-  color: #291e50;
+  margin: 0;
+  padding: 0;
 }
 
 .App__Form {
@@ -16,7 +17,6 @@
 }
 
 .App__Aside {
-  flex: 4;
   background-image: linear-gradient(to right, #291e50, #4a3a83);
 }
 

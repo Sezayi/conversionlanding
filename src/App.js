@@ -6,23 +6,28 @@ import Ebook from './images/ebook.png';
 import './App.css';
 import { Grid, Row, Col} from 'react-flexbox-grid';
 
+
 class App extends Component {
   render() {
     return (
       <Router basename="/">
         <Grid fluid>
-            <Row>
-                  <div className="ImageWrapper">
-                  <img className="ImageStyle" src={Ebook} alt="ebook"/>
-                  </div>   
-            </Row>
-            <Row>
-                  <Route exact path="/" component={SignUpForm}>
-                  </Route>
-                  <Route path="/thankyou" component={ThankYou}>
-                  </Route>
-            </Row>
-          </Grid>
+          <Row around="xs">
+              <Row xs={1} center="xs" middle="xs">
+                <Col xs={12}>
+                    <img src={Ebook} width="50%" alt="ebook"/>
+                </Col>
+              </Row>
+              <Row xs={1}>
+                <Col xs={12} >           
+                    <Route exact path="/" component={SignUpForm}>
+                    </Route>
+                    <Route path="/thankyou" component={ThankYou}>
+                    </Route>
+                </Col>
+              </Row>
+          </Row>
+        </Grid>
       </Router>
     );
   }
